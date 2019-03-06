@@ -4,6 +4,8 @@ LABEL maintainer="University of Alberta Libraries"
 ENV HOME /root
 CMD ["/sbin/my_init"]
 
+RUN bash -lc 'rvm install ruby-2.6.1'
+RUN bash -lc 'rvm --default use ruby-2.6.1'
 RUN bash -lc 'gem install bundler'
 
 RUN apt-get update -qq \
